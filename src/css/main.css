@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+:root {
+  --base-color: #854836;
+  --primary-color: #FFB22C;
+  --secondary-color: #F7F7F7;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  color: #854836;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text__intro {
+  color: #854836;
+  text-align: center;
+  padding: 1rem;
+}
+
+.text__intro-heading {
+  margin: 0 auto;
+  font-size: 3rem;
+  padding-bottom: 2.125rem;
+  font-weight: 700;
+  max-width: 34rem;
+  /* background-color: blue; */
+}
+
+.text__intro-highlight {
+  color: var(--primary-color)
+}
+
+.text__intro-description {
+  margin: 0 auto;
+  /* width: 41.812rem; */
+  font-size: 1.25rem;
+  /* background-color: rgb(225, 0, 255); */
+  max-width: 34rem;
+  padding-bottom: 4rem;
+}
+
+.image-intro {
+  height: 24rem;
+  background-image: url('../images/bg-coffee.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  width: 100%;
+  /* background-color: orange; */
+  margin-top: 2rem;
+}
+
+.button-explore {
+  background-color: transparent;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  color: var(--base-color);
+}
+.button-explore:hover {
+  color: var(--primary-color);
+}
+.button-explore__content {
+  /*  */
+}
+
+.button-explore__content-label {
+  font-weight: 600;
+}
+
+.button-explore__content-icon {
+  /*  */
+}
+
+@media (max-width: 576px) {
+  .section {
+    height: auto;
+    /* padding: 1rem 0.5rem */
+  }
+  .text__intro-heading {
+    font-size: 2rem;
+  }
+  .text__intro-description {
+    font-size: 1.125rem;
+  }
+  .image-intro {
+    height: 19.3125rem;
+  }
+}
