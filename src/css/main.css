@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('./utility.css');
 
 :root {
   --base-color: #854836;
@@ -17,22 +18,6 @@ body {
   font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   color: #854836;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.w-100 {
-  width: 100%;
-}
-
-.section {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .text__intro {
@@ -64,7 +49,7 @@ body {
 }
 
 .image-intro {
-  height: 24rem;
+  height: 18rem;
   background-image: url('../images/bg-coffee.jpg');
   background-size: cover;
   background-position: center center;
@@ -74,18 +59,25 @@ body {
   margin-top: 2rem;
 }
 
-.button-explore {
+.button {
   background-color: transparent;
   border: none;
   display: block;
-  margin: 0 auto;
   cursor: pointer;
+}
+
+.button-explore {
+  border: none;
+  margin: 0 auto;
   margin-top: 1.5rem;
   color: var(--base-color);
+  margin-bottom: 1.5rem;
 }
+
 .button-explore:hover {
   color: var(--primary-color);
 }
+
 .button-explore__content {
   /*  */
 }
@@ -98,18 +90,195 @@ body {
   /*  */
 }
 
-@media (max-width: 576px) {
+.button-show-trivia {
+  background-color: orange;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  /* align-items: center; */
+}
+
+.section__title {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.section__description {
+  font-weight: 200;
+  font-size: 1.5rem;
+  width: 30rem;
+}
+
+.section__one {
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.section__content {
+  height: 40rem;
+  width: 75rem;
+  max-width: 75rem;
+  /* background-color: yellowgreen; */
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+/* vertical line timeline */
+.section__detail::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: var(--base-color);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: -3px;
+}
+
+/* timeline circle */
+.section__detail::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 0;
+  background-color: var(--primary-color);
+  top: 50%;
+  border-radius: 50%;
+  z-index: 1;
+  margin-right: -12px;
+}
+
+.section__detail {
+  flex: 1;
+  order: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.section__image {
+  position: relative;
+  flex: 1;
+  order: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.section__image img {
+  width: 28rem;
+  height: auto;
+}
+
+/* Styles for xs only */
+/* @media (max-width: 575.98px) {
+} */
+
+@media (min-width: 0px) and (max-width: 767.98px) {
+  /* Styles for sm only */
+
+  .section__title {
+    font-size: 1.5rem;
+  }
+
+  .section__description {
+    font-size: 1rem;
+    width: auto;
+  }
+
   .section {
     height: auto;
     /* padding: 1rem 0.5rem */
   }
+
   .text__intro-heading {
     font-size: 2rem;
   }
+
   .text__intro-description {
     font-size: 1.125rem;
   }
+
   .image-intro {
     height: 19.3125rem;
   }
+
+  .section__content {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .section__detail {
+    flex-basis: 100%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 4rem;
+  }
+
+  .section__image {
+    flex-basis: 100%;
+    padding: 1rem;
+    padding-left: 4rem;
+  }
+
+  .section__image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* (detail) vertical line timeline */
+  .section__detail::before {
+    left: 30px;
+  }
+
+  /* (detail) timeline circle */
+  .section__detail::after {
+    left: 14px;
+  }
+
+  /* (image) vertical line timeline */
+  .section__image::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--base-color);
+    top: 0;
+    bottom: 0;
+    left: 30px;
+    margin-left: -3px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  /* Styles for md only */
+  .section__image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Styles for lg only */
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  /* Styles for xl only */
 }

@@ -16,8 +16,6 @@ ScrollSmoother.create({
 });
 
 
-
-
 const elImageIntro = document.querySelectorAll(".image-intro");
 gsap.fromTo(
   elImageIntro,
