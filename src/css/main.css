@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('./normalize.min.css');
 @import url('./utility.css');
 
 :root {
@@ -122,7 +122,7 @@ body {
 }
 
 .section__description {
-  font-weight: 200;
+  font-weight: 500;
   font-size: 1.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -196,7 +196,15 @@ body {
   right: unset;
   left: 1px;
   margin-right: unset;
-  margin-left: -12px;
+  margin-left: -15px;
+}
+
+.section:nth-child(2) .section__left::before {
+  top: 50%;
+}
+
+.section:nth-child(6) .section__left::before {
+  bottom: 50%;
 }
 
 .section__content-image img {
@@ -225,7 +233,6 @@ body {
 
   .section {
     height: auto;
-    /* padding: 1rem 0.5rem */
   }
 
   .text__intro-heading {
@@ -252,13 +259,12 @@ body {
 
   .section__right {
     width: 100%;
-    /* padding: 1rem; */
   }
 
   .section__content-image {
-    /* padding: 0 0 1rem 3rem; */
     padding-left: 3rem;
     padding-bottom: 2rem;
+    padding-right: 2rem;
   }
   .section__content-image img {
     width: 100%;
@@ -298,6 +304,10 @@ body {
     left: 1px;
     margin-right: unset;
     margin-left: 14px;
+  }
+
+  .section:nth-child(6) .section__right::before {
+    display: none;
   }
 
   .section__content-video {
