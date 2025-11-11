@@ -6,15 +6,14 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 ScrollSmoother.create({
- wrapper: "#smooth-wrapper",
- content: "#smooth-content",
- smooth: 1,
- normalizeScroll: true,
- ignoreMobileResize: true,
- effects: true,
- preventDefault: true
+  wrapper: "#smooth-wrapper",
+  content: "#smooth-content",
+  smooth: 1,
+  normalizeScroll: true,
+  ignoreMobileResize: true,
+  effects: true,
+  preventDefault: true,
 });
-
 
 const elImageIntro = document.querySelectorAll(".image-intro");
 gsap.fromTo(
@@ -54,3 +53,35 @@ gsap.fromTo(
 //     },
 //   }
 // );
+
+// Intro text animation
+gsap.fromTo(
+  ".text__intro-heading",
+  {
+    y: "10%",
+    opacity: 0,
+  },
+  {
+    y: "0%",
+    opacity: 1,
+    ease: "expo.inOut",
+    delay: 1,
+    duration: 2,
+  }
+);
+
+gsap.fromTo(
+  ".text__intro-description",
+  {
+    y: "10%",
+    opacity: 0,
+  },
+  {
+    y: "0%",
+    opacity: 1,
+    ease: "expo.inOut",
+    delay: 2,
+    duration: 2,
+  }
+);
+
