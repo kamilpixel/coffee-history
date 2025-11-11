@@ -12,15 +12,15 @@
         <!-- Intro section -->
         <section class="section" style="background-color: #ffffff">
           <div class="w-100">
-            <div class="text__intro">
-              <h1 class="text__intro-heading">
+            <div class="banner__section">
+              <h1 class="banner__section-heading">
                 The Fascinating Journey of<span
-                  class="text__intro text__intro-highlight"
+                  class="banner__section banner__section-highlight"
                 >
                   Coffee </span
                 >Through Time
               </h1>
-              <p class="text__intro text__intro-description">
+              <p class="banner__section banner__section-description">
                 Coffee is more than just a drink — it's a global culture that
                 connects people from all walks of life. From its legendary
                 discovery in Ethiopia to modern specialty cafes, coffee's story
@@ -33,9 +33,10 @@
               <div class="button-explore__content">
                 <div class="button-explore__content-label">
                   Scroll to explore
-                  <!-- TODO: add button icon -->
                 </div>
-                <div class="button-explore__content-icon">↓</div>
+                <div class="button-explore__content-icon">
+                  <iconify-icon icon="mdi:chevron-down-circle-outline" width="24" height="24"></iconify-icon>
+                </div>
               </div>
             </button>
           </div>
@@ -55,9 +56,9 @@
                   used these berries to stay awake during long prayers — marking
                   the first recorded use of coffee as a stimulant
                 </p>
-                <button class="button button-show-trivia mt-5">
-                  Show Trivia
-                  <!-- TODO: add button icon -->
+                <button id="btnShowTrivia" class="button button-show-trivia mt-5">
+                  <iconify-icon icon="mdi:information-outline" width="18" height="18"></iconify-icon>
+                  <span class="pl-2">Show Trivia</span>
                 </button>
               </div>
             </div>
@@ -189,12 +190,12 @@
         <section class="section">
           <div class="section__content section__content-closing">
             <div class="w-100">
-              <div class="text__intro">
-                <h1 class="text__intro-heading" style="max-width: 47rem">
+              <div class="banner__section">
+                <h1 class="banner__section-heading" style="max-width: 47rem">
                   From mystical origins in Ethiopia to today's global cafe
                   culture
                 </h1>
-                <p class="text__intro text__intro-description">
+                <p class="banner__section banner__section-description">
                   Coffee's journey spans centuries and continents. Every cup
                   carries a legacy of tradition, community, and discovery -
                   reminding us that coffee is more than a drink; it's a story
@@ -220,7 +221,23 @@
         </section>
       </div>
     </div>
-
+    <!-- TODO: make popup as reusable component -->
+    <div id="popup" class="popup">
+      <div class="popup__overlay"></div>
+      <div class="popup__container">
+        <div class="popup__box">
+          <div class="popup__header">
+            <h3>Did you know?</h3>
+            <button id="btnClosePopup" class="popup__button-close">
+              <iconify-icon icon="mdi:close-circle-outline" width="32" height="32"></iconify-icon>
+            </button>
+          </div>
+          <div class="popup__body">
+            <p>The word "coffee" comes from the Arabic term "qahwa," later adapted into Turkish as "kahve," and eventually into English as "coffee." Its meaning evolved over time to represent the energizing drink we know today</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

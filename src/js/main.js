@@ -1,3 +1,4 @@
+import "iconify-icon";
 import "../css/main.css";
 
 import { gsap } from "gsap";
@@ -5,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+// Initialize smooth scrolling
 ScrollSmoother.create({
   wrapper: "#smooth-wrapper",
   content: "#smooth-content",
@@ -15,6 +17,7 @@ ScrollSmoother.create({
   preventDefault: true,
 });
 
+// Initialize parallax effect for intro image
 const elImageIntro = document.querySelectorAll(".image-intro");
 gsap.fromTo(
   elImageIntro,
@@ -34,29 +37,9 @@ gsap.fromTo(
   }
 );
 
-// parallax text effect
-// const elTextIntroHead = document.querySelectorAll(".text__intro--heading");
-// gsap.fromTo(
-//   elTextIntroHead,
-//   {
-//     y: "20%",
-//   },
-//   {
-//     y: "-20%",
-//     ease: "none",
-//     scrollTrigger: {
-//       trigger: elTextIntroHead,
-//       start: "top bottom",
-//       end: "bottom top",
-//       scrub: 1,
-//       invalidateOnRefresh: true,
-//     },
-//   }
-// );
-
 // Intro text animation
 gsap.fromTo(
-  ".text__intro-heading",
+  ".banner__section-heading",
   {
     y: "10%",
     opacity: 0,
@@ -69,9 +52,8 @@ gsap.fromTo(
     duration: 2,
   }
 );
-
 gsap.fromTo(
-  ".text__intro-description",
+  ".banner__section-description",
   {
     y: "10%",
     opacity: 0,
@@ -84,4 +66,26 @@ gsap.fromTo(
     duration: 2,
   }
 );
+
+// Show hide pop up
+const popupElement = document.getElementById('popup')
+const popupAction = {
+  show: () => {
+    popupElement.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  },
+  hide: () => {
+    popupElement.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }  
+}
+
+// Add button event for Show Trivia
+document.getElementById("btnShowTrivia").addEventListener("click", () => {
+  popupAction.show();
+});
+document.getElementById("btnClosePopup").addEventListener("click", () => {
+  popupAction.hide();
+});
+
 
