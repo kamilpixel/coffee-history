@@ -212,6 +212,12 @@ body {
   height: auto;
 }
 
+.section__content-closing {
+  text-align: center;
+  padding-bottom: 5rem;
+  height: auto;
+}
+
 /* 
 * Mobile styles below
 */
