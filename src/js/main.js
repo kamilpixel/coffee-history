@@ -5,8 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { SplitText } from "gsap/SplitText";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin, SplitText);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
 // Initialize smooth scrolling
 const smoother = ScrollSmoother.create({
@@ -14,7 +13,7 @@ const smoother = ScrollSmoother.create({
   content: "#smooth-content",
   smooth: 1,
   normalizeScroll: true,
-  ignoreMobileResize: true,
+  ignoreMobileResize: false,
   effects: true,
   preventDefault: true,
 });

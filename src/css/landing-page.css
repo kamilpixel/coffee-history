@@ -1,7 +1,6 @@
 .banner__section {
   color: #854836;
   text-align: center;
-  /* padding: 1rem; */
   margin-top: 5rem;
   padding-bottom: 2rem;
 }
@@ -12,7 +11,6 @@
   padding-bottom: 2.125rem;
   font-weight: 700;
   max-width: 34rem;
-  /* background-color: blue; */
 }
 
 .banner__section-highlight {
@@ -21,9 +19,7 @@
 
 .banner__section-description {
   margin: 0 auto;
-  /* width: 41.812rem; */
   font-size: 1.25rem;
-  /* background-color: rgb(225, 0, 255); */
   max-width: 34rem;
   padding-bottom: 4rem;
 }
@@ -35,7 +31,6 @@
   background-position: center center;
   position: relative;
   width: 100%;
-  /* background-color: orange; */
   margin-top: 2rem;
 }
 
@@ -56,10 +51,6 @@
 
 .button-explore:hover {
   color: var(--primary-color);
-}
-
-.button-explore__content {
-  /*  */
 }
 
 .button-explore__content-label {
@@ -308,6 +299,10 @@
 
   .section__content-video iframe {
     width: 100%;
+  }
+
+  .section:nth-child(7) {
+    padding-bottom: 10rem;
   }
 
 }
