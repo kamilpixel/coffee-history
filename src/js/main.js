@@ -5,7 +5,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin, SplitText);
 
 // Initialize smooth scrolling
 const smoother = ScrollSmoother.create({
@@ -40,40 +41,135 @@ gsap.fromTo(
 
 // Intro text animation
 gsap.fromTo(
-  ".banner__section-heading",
+  ".banner-element-animation",
   {
-    y: "10%",
     opacity: 0,
+    y: 70,
   },
   {
-    y: "0%",
+    y: 0,
     opacity: 1,
-    ease: "expo.inOut",
-    delay: 1,
     duration: 2,
+    stagger: 0.4,
+    ease: "expo.out",
   }
 );
+
+// Image intro animation
 gsap.fromTo(
-  ".banner__section-description",
+  '[data-animation-id="imageIntro"]',
   {
-    y: "10%",
     opacity: 0,
   },
   {
-    y: "0%",
     opacity: 1,
-    ease: "expo.inOut",
-    delay: 2,
-    duration: 2,
+    duration: 3,
+    delay: 1,
   }
 );
+
+// Section images animation
+for (let index = 1; index <= 5; index++) {
+  gsap.fromTo(
+    `[data-animation-id="sectionImage${index}"]`,
+    {
+      x: (index % 2 === 0) ? 100 : -100,
+      opacity: 0,
+    },
+    {
+      scrollTrigger: {
+        trigger: `[data-animation-id="sectionAnim${index}"]`,
+        start: "top center",
+        end: "30% center",
+        // markers: true,
+        toggleActions: "restart complete restart reset",
+        scrub: 2,
+      },
+      x: 0,
+      opacity: 1,
+      duration: 3,
+    }
+  );
+}
+
+// Section text animation
+for (let index = 1; index <= 5; index++) {
+  gsap.fromTo(
+    `[data-animation-id="sectionText${index}"]`,
+    {
+      x: (index % 2 === 0) ? -30 : 30,
+      opacity: 0,
+    },
+    {
+      scrollTrigger: {
+        trigger: `[data-animation-id="sectionAnim${index}"]`,
+        start: "top center",
+        end: "30% center",
+        toggleActions: "restart complete restart reset",
+        scrub: 1,
+      },
+      x: 0,
+      opacity: 1,
+      duration: 2,
+    }
+  );
+}
+
+// sectionClosing animation
+gsap.fromTo(
+  `[data-animation-id="sectionClosing"]`,
+  {
+    opacity: 0,
+  },
+  {
+    scrollTrigger: {
+      trigger: `[data-animation-id="sectionClosing"]`,
+      start: "top center",
+      end: "30% center",
+      toggleActions: "restart complete restart reset",
+      scrub: 2,
+    },
+    opacity: 1,
+    duration: 3,
+  }
+);
+
+
+/* 
+document.fonts.ready.then(() => {
+  gsap.set(".container", { opacity: 1 });
+  let split = SplitText.create(".animate-me", { type: "words", aria: "hidden" });
+
+  gsap.from(split.words, {
+    opacity: 0,
+    duration: 2,
+    ease: "sine.out",
+    stagger: 0.1,
+  });
+});
+
+*/
+
+
+
+
 
 // Show hide pop up
 const popupElement = document.getElementById("popup");
 const popupAction = {
   show: () => {
     popupElement.style.display = "block";
-    document.body.style.overflow = "hidden";
+    gsap.fromTo(
+      popupElement,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "expo.inOut",
+      }
+    );
   },
   hide: () => {
     popupElement.style.display = "none";
@@ -91,7 +187,11 @@ document.getElementById("btnClosePopup").addEventListener("click", () => {
 
 // Button start event
 document.getElementById("btnStart").addEventListener("click", () => {
-  gsap.to(window, { duration: 1, scrollTo: { y: "#section1" }, ease: "expo.inOut" });
+  gsap.to(window, {
+    duration: 1,
+    scrollTo: { y: "#section1" },
+    ease: "expo.inOut",
+  });
 });
 
 // Button restart event
