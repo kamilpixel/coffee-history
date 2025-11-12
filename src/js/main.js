@@ -177,3 +177,5 @@ document.getElementById("btnStart").addEventListener("click", () => {
 document.getElementById("btnRestart").addEventListener("click", () => {
   gsap.to(window, { duration: 1, scrollTo: { y: 0 }, ease: "expo.inOut" });
 });
+
+// TODO add preloader

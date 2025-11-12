@@ -4,9 +4,9 @@ An interactive scrolling timeline that takes you through the fascinating journey
 
 ## Live Preview
 
-Visit the live website at: [Coffee History Timeline](#)
+Visit the live website at: [Coffee History Timeline](https://coffee-history.netlify.app)
 
-![Screenshot](#)
+![Screenshot](https://coffee-history.netlify.app/img/preview-coffee-history.png)
 
 ## Tech Stack
 
